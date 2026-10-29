@@ -1,0 +1,8 @@
+<script>
+/* Lưu game để chơi offline (chỉ bản web; app Android đã gói sẵn) */
+if ('serviceWorker' in navigator && location.protocol === 'https:' && !/appassets\.androidplatform\.net$/.test(location.hostname)) {
+  window.addEventListener('load', () => { navigator.serviceWorker.register('sw.js').catch(() => {}); });
+}
+</script>
+</body>
+</html>
