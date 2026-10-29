@@ -10,7 +10,7 @@ plugins {
 val ver = Properties().apply { rootProject.file("version.properties").inputStream().use { load(it) } }
 // Khóa ký lấy từ GitHub Secrets lúc build; không có thì ký tạm bằng khóa debug
 val ksPath: String? = System.getenv("KEYSTORE_FILE")?.takeIf { file(it).exists() }
-val ksPass: String = System.getenv("KEYSTORE_PASSWORD") ?: "onluyennhakhoa"
+val ksPass: String = System.getenv("KEYSTORE_PASSWORD") ?: "mophongnhakhoa"
 
 android {
     namespace = "io.github.tunaasieunhat.mophongnhakhoa"
@@ -30,7 +30,7 @@ android {
                 storeFile = file(ksPath)
                 storeType = "pkcs12"
                 storePassword = ksPass
-                keyAlias = System.getenv("KEY_ALIAS") ?: "onluyen"
+                keyAlias = System.getenv("KEY_ALIAS") ?: "mophong"
                 keyPassword = ksPass
             }
         }

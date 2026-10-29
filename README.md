@@ -49,8 +49,8 @@ android/               App Android viết bằng Kotlin (gói sẵn game, không
 
 - Mỗi lần đẩy thay đổi lên, GitHub Actions tự build APK. Có khóa ký thì APK được đăng lên **Releases**; app trên máy tự báo khi có bản mới.
 - Khóa ký đặt trong **Settings → Secrets and variables → Actions**:
-  - `ANDROID_KEYSTORE_B64`: nội dung file khóa dạng base64 (có thể dùng lại khóa của app Ôn Luyện Nha Khoa).
-  - `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`: chỉ cần khi khóa không phải khóa của Ôn Luyện Nha Khoa.
+  - `ANDROID_KEYSTORE_B64`: nội dung file khóa dạng base64 (file `ANDROID_KEYSTORE_B64.txt` tạo riêng cho game này).
+  - `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`: chỉ cần khi dùng khóa khác với khóa mặc định.
 - Chưa có khóa thì workflow chỉ build thử; file APK tải được ở mục **Artifacts** của lần chạy đó.
 
 ## Ghi chú
