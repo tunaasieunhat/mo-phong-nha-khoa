@@ -59,7 +59,7 @@ jobs:
             echo "::notice title=Khóa ký hợp lệ::$(grep -o 'SHA-256): .*' "$RUNNER_TEMP/ks.txt" | head -1)"
             { echo "KEYSTORE_FILE=$RUNNER_TEMP/release.p12"; echo "KEYSTORE_PASSWORD=$pass"; echo "KEY_ALIAS=$alias"; echo "SIGNED=1"; } >> "$GITHUB_ENV"
           else
-            echo "::error title=Secret ANDROID_KEYSTORE_B64 chưa đúng::Không đọc được khóa (sai nội dung hoặc sai mật khẩu). Kiểm tra lại các secret."
+            echo "::error title=Secret ANDROID_KEYSTORE_B64 chưa đúng::Secret dài ${#KS} ký tự, còn ${#clean} ký tự base64 (khóa hiện tại đúng phải là 1416). Hãy sửa secret và dán lại TOÀN BỘ nội dung file ANDROID_KEYSTORE_B64.txt."
             exit 1
           fi
 
